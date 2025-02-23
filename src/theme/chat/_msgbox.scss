@@ -1,0 +1,64 @@
+/* Timestamps */
+/* Edited */
+span[class*="timestamp_"] time[aria-label*="Edited"]::after {
+    content: "✎" !important;
+    font-size: 0.725rem;
+    font-weight: 400;
+  }
+  /* Message Header*/
+  span[class*="timestampInline_"] time::after {
+    content: attr(aria-label);
+    font-size: 0.65rem;
+    font-weight: 400;
+  }
+  /* Multi-line Hover */
+  span[class*="timestampVisibleOnHover_"] time::after {
+    content: attr(aria-label);
+    position: absolute;
+    font-size: 0.6rem;
+    line-height: 0.85rem;
+    width: 65px;
+    left: -1px;
+    top: -2px;
+  }
+  /* Hide Default Timestamp */
+  span[class*="timestampInline_"],
+  span[class*="timestampVisibleOnHover_"] {
+    font-size: 0rem !important;
+  }
+  span[class*="edited_"] {
+    position: relative;
+    right: 95px;
+    color: transparent;
+  }
+
+  /* Chat box Text */
+[class*="inner_"] [class*="placeholder_"]::before {
+    content: "[ insert text here ]" !important;
+  }
+  
+  /* Restricted Chat box Text*/
+  [class*="innerDisabled_"] [class*="placeholder_"]::before {
+    content: "[ locked ]" !important;
+  }
+  
+  /* Hide Restricted Chat Box */
+  [class*="channelTextAreaDisabled"] {
+    display: none !important;
+  }
+  /* ^ If Themes modify feature */
+  [class*="channelTextAreaDisabled"] {
+    opacity: 0 !important;
+    position: absolute !important;
+    height: 0px !important;
+    width: 0px !important;
+    z-index: 0 !important;
+  }
+  
+  /* Typing */
+  // [class*="typing_"] strong:last-child::after {
+  //   content: "";
+  // }
+  // [class*="typing_"] strong:nth-last-child()::after {
+  //   content: "";
+  // }

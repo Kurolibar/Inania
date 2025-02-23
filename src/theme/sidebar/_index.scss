@@ -1,0 +1,86 @@
+@forward './chats';
+@forward './members';
+
+
+
+/* Floating User Panel*/
+/* [class*="sidebar_"] [class*="panels_"] [class*="container_"] {
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  background: transparent !important;
+  color: transparent !important;
+}
+.theme-dark [class*="sidebar_"] [class*="panels_"] {
+  background: transparent !important;
+  backdrop-filter: blur(1px) grayscale(50%);
+}
+.theme-dark .container_adcaac,
+[class*="activityPanel_"] {
+  background: linear-gradient(transparent, hsla(0, 0%, 0%, 0.5)) !important;
+} */
+
+.theme-dark {
+  [class*="sidebar_"] {
+    [class*="panels_"] {
+      background: transparent !important;
+      backdrop-filter: blur(1px) grayscale(50%);
+
+      [class*="container_"] {
+        border-top-left-radius: 5px !important;
+        border-top-right-radius: 5px !important;
+        background: transparent !important;
+        color: transparent !important;
+      }
+    }
+  }
+  [class*="activityPanel_"],
+  .container_adcaac {
+    background: linear-gradient(transparent, hsla(0, 0%, 0%, 0.5)) !important;
+  }
+}
+
+/* Sidebar Image */
+/* [class*="sidebar_"]:not(:has([aria-label*="Direct Messages"])) {
+  [aria-label="Channels"] {
+    background-image: linear-gradient(to left, transparent 0%, black 35%),
+      var(--side-image), linear-gradient(transparent 0%, black 0%),
+      var(--side-image);
+    background-size: cover, 89px;
+    background-repeat: no-repeat;
+    background-position: center, 17vmin 10vmin;
+    background-attachment: local, fixed;
+    background-blend-mode: luminosity;
+  }
+
+  [aria-label="Channels"]:hover {
+    background-blend-mode: normal;
+  }
+
+  [class*="avatar_"] {
+    filter: unset;
+  }
+} */
+/* VC Hang Status */
+[class*="iconGroup"]:has([class*="hangStatusIcon"], [class*="gameIcon"]) {
+  display: flex;
+  position: absolute;
+  right: 101%;
+}
+[class*="layerContainer"]
+  [class*="popout"]:has([class*="text-xs-medium"], [class*="options"]) {
+  display: flex;
+}
+
+/* Gradient User Status */
+[class*="memberInner"]:has(div > div[aria-label*="Online"]) {
+  background: linear-gradient(to left, rgba(68, 105, 68, 0.25), transparent);
+}
+[class*="memberInner"]:has(div > div[aria-label*="Idle"]) {
+  background: linear-gradient(to left, rgba(135, 105, 75, 0.25), transparent);
+}
+[class*="memberInner"]:has(div > div[aria-label*="Do Not Disturb"]) {
+  background: linear-gradient(to left, rgba(130, 70, 70, 0.25), transparent);
+}
+[class*="memberInner"]:has(div > div[aria-label*="Streaming"]) {
+  background: linear-gradient(to left, rgba(63, 33, 88, 0.25), transparent);
+}

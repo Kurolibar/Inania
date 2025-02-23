@@ -1,0 +1,9 @@
+/* Collapsible message actions */
+[class*="buttonsInner_"]:not(:hover)
+  > :is([role="button"]:not(:last-child), [class*="separator_"]) {
+  display: none;
+  transition: 1s 1.25s;
+}
+[aria-label="Message Actions"] {
+  transition: 0.005s 0.05s;
+}

@@ -1,0 +1,88 @@
+@forward './msglog';
+
+/* Readable Users */
+[class*="username_"][style],
+.mention[style],
+[class*="membersGroup_"] [style] {
+  filter: contrast(0.2) brightness(1.2) saturate(300%);
+}
+[class*="subtitleContainer_"] [class*="input_"] {
+  font-family: "Nanum Gothic Coding" !important;
+  font-weight: inherit !important;
+}
+
+/* Bot Icons */
+[class*="botTag_"]:not(
+    [class*="botTagOP"],
+    [class*="botTagRemix"],
+    [class*="botTagAI"],
+    [class*="systemTag"]
+  ) {
+  content: url("data:image/svg+xml,%3Csvg height='20' width='20' viewBox='0 0 690 512' xmlns='http://www.w3.org/2000/svg' fill='%23ffffff'%3E%3Cpath d='m32 224h32v192h-32a31.96166 31.96166 0 0 1 -32-32v-128a31.96166 31.96166 0 0 1 32-32zm512-48v272a64.06328 64.06328 0 0 1 -64 64h-320a64.06328 64.06328 0 0 1 -64-64v-272a79.974 79.974 0 0 1 80-80h112v-64a32 32 0 0 1 64 0v64h112a79.974 79.974 0 0 1 80 80zm-280 80a40 40 0 1 0 -40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm96 0h-64v32h64zm104-128a40 40 0 1 0 -40 40 39.997 39.997 0 0 0 40-40zm-8 128h-64v32h64zm192-128v128a31.96166 31.96166 0 0 1 -32 32h-32v-192h32a31.96166 31.96166 0 0 1 32 32z'/%3E%3C/svg%3E%0A");
+}
+
+
+
+/* Change Slash Command Menu & Emote background color */
+.theme-dark [class*="autocomplete_"],
+[class*="autocomplete_"] [class*="categoryHeader_"],
+[class*="navButton_"],
+[class*="inspector_"] {
+  background: transparent !important;
+  backdrop-filter: blur(20px);
+}
+
+/* Slash Command cleaner WIP */
+.appLauncherOnboardingCommandName_ec86aa .clickable_ec86aa {
+  background: 0 0;
+  padding-left: 0;
+}
+.executedCommand_ec86aa .appLauncherOnboardingCommandName_ec86aa:hover {
+  background: 0 0;
+}
+
+/* No, I don't want to make a thread from a chain of more than 2 replies */
+[class*="threadSuggestionBar_"] {
+  display: none;
+}
+
+// /* Box Avatar */
+// [class*="avatar_"] {
+//   border-radius: 25%;
+// }
+
+// div[class*="buttonContainer_"] [class*="wrapper_"] {
+//   background: #ffffff1e !important;
+// }
+// div[class*="buttonContainer_"] [class*="button_"]:hover {
+//   background: #0000004f;
+//   transition: 0.25s 0.075s;
+// }
+
+
+
+
+
+[class*="textArea_"] {
+  margin-right: 24px;
+  + [class*="buttons_"] {
+    position: absolute;
+    right: 0;
+    background-color: transparent;
+    backdrop-filter: blur(3px);
+    border-radius: 8px;
+    &:not(:hover) > :not(:last-child) {
+      display: none;
+    }
+    /* Fix send message button */
+    &:not(:hover) > [class*="separator_"] {
+      margin-left: 0;
+      &::before {
+        display: none;
+      }
+      button > div {
+        margin-left: 8px;
+      }
+    }
+  }
+}

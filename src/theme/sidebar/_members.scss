@@ -1,0 +1,41 @@
+div > [class*="layout_"] {
+    border-radius: var(--gDM-border-radius);
+    margin: 0.3px;
+}
+
+[class^="memberInner"]:has([mask*="online"], [fill="#23a55a"]) {
+    background: var(--gDM-online);
+}
+[class^="memberInner"]:has([mask*="offline"], [fill="#f0b232"]) {
+    background: var(--gDM-offline);
+}
+[class^="memberInner"]:has([mask*="dnd"], [fill="#f23f43"]) {
+    background: var(--gDM-dnd);
+}
+[class^="memberInner"]:has([mask*="idle"], [fill="#f0b232"]) {
+    background: var(--gDM-idle);
+}
+[class^="memberInner"]:has([mask*="streaming"], [fill="#3f2158"]) {
+    background: var(--gDM-streaming);
+}
+
+ul > li > [class*="interactive_"] {
+    border-radius: var(--gDM-border-radius);
+    margin: 0.3px;
+}
+
+[class^="link_"]:has([mask*="online"], [fill="#23a55a"]) {
+    background: var(--gDM-online);
+}
+[class^="link_"]:has([mask*="offline"], [fill="#80848e"]) {
+    background: var(--gDM-offline);
+}
+[class^="link_"]:has([mask*="dnd"], [fill="#f23f43"]) {
+    background: var(--gDM-dnd);
+}
+[class^="link_"]:has([mask*="idle"], [fill="#f0b232"]) {
+    background: var(--gDM-idle);
+}
+[class^="link_"]:has([mask*="streaming"], [fill="#3f2158"]) {
+    background: var(--gDM-streaming);
+}

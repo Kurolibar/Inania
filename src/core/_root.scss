@@ -1,0 +1,40 @@
+// The CSS to be included in your .theme.css file.
+// Addon @imports should be placed here.
+
+
+:root {
+  /* Profile */
+
+  /* Sidebar */
+  --side-image: url(https://fauux.neocities.org/doorBK.gif);
+  --gDM-online: linear-gradient(to right, rgb(68, 105, 68), transparent);
+  --gDM-offline: linear-gradient(to right, rgb(66, 66, 66), transparent);
+  --gDM-dnd: linear-gradient(to right, rgb(130, 70, 70), transparent);
+  --gDM-idle: linear-gradient(to right, rgb(135, 105, 75), transparent);
+  --gDM-streaming: linear-gradient(to right, rgb(63, 33, 88), transparent);
+  --gDM-border-radius: 12px;
+  /* Spotify */
+
+  /* Text */
+  --edited-message: " ✎ ";
+  --font-name: Consolas;
+  --font-size: 13px;
+  /* Override Theme Chat Background */
+  --channeltextarea-background: transparent;
+  --scb-applauncher-padding: 0px;
+  /* border-radius of bar */
+  --scb-border-radius: 0px;
+  /* default = 8px */
+  --msg-solo-button-width: 36px;
+  --msg-grid-button-padding: 32px;
+  --msg-grid-columns: 1;
+  --msg-button-height: 64px;
+  --msg-button-border-radius: 8px;
+  --msg-section-spacing: 12px;
+
+  /* UI */
+  --user-name: "";
+  --bg-opacity: 90%;
+  --wallpaper: url("https://kurolibar.github.io/Discord-CSS/src/Resources/Strings.jpg");
+  --accentcolorV2: #aa1caa;
+}

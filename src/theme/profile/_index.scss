@@ -1,0 +1,138 @@
+/* Modified Profile Popup */
+[class*="userPopoutOuter_"] {
+    /*--profile-gradient-primary-color: transparent !important;*/
+    --profile-gradient-secondary-color: transparent !important;
+    --profile-gradient-overlay-color: transparent !important;
+    --profile-avatar-border-color: hsla(112, 85.9%, 86.1%, 1);
+    --profile-body-background-color: hsla(0, 0%, 100%, 0.5) !important;
+    --profile-role-pill-background-color: rgba(255, 255, 255, 0.1) !important;
+    /*--text-normal: var(--text-normal);*/
+    /*--interactive-normal: var(--interactive-normal);*/
+    position: relative !important;
+    backdrop-filter: blur(6px);
+  }
+  [class*="userPanelOuter_"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(5px);
+  }
+  [class*="profilePanel_"] {
+    background: transparent !important;
+  }
+  [class*="userPanelOuter_"] {
+    --profile-gradient-primary-color: none !important;
+    --profile-gradient-overlay-color: none !important;
+    backdrop-filter: blur(1px) !important;
+  }
+  [class*="activityBiteSizePopout_"] {
+    background: rgba(255, 255, 255, 0.25) !important;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+  }
+  /*[class*=activityBiteSizePopout_]::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      border: 0px solid transparent;
+      box-sizing: border-box;
+      mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+      mask-composite: xor;
+      opacity: .51 !important;
+  }
+  */
+  [class*="userPopoutInner_"] [class*="eyebrow_"] {
+    display: none;
+  }
+  [class*="userProfileModalInner_"] [class*="note_"] {
+    visibility: visible !important;
+    opacity: 0%;
+    transition: opacity 0.25s;
+  }
+  [class*="note_"]:hover {
+    opacity: 100%;
+  }
+  /* Match Status Bubble color with Profile Primary Color */
+  [class*="statusBubble_"] {
+    background-color: var(--profile-gradient-primary-color);
+  }
+  [class*="statusBubbleOuter_"]:before {
+    background-color: var(--profile-gradient-primary-color);
+  }
+  [class*="statusBubbleOuter_"]:after {
+    background-color: var(--profile-gradient-primary-color);
+  }
+  /*Role Colour*/
+  /* Target the role elements and apply styles */
+  [class*="role_"] {
+    transform: translate(0);
+    border: 0;
+    border-radius: 5px !important;
+    --transparency: 0.4; /* You may want to adjust the transparency value */
+  }
+  /* Target the roleRemoveIcon and adjust its positioning */
+  [class*="role_"] [class*="roleRemoveIcon_"] {
+    margin: 0;
+    left: unset;
+    transform: translate(1px, -5px) scale(450%);
+  }
+  
+  [class*="role_"] [class*="roleRemoveButton_"] {
+    margin: 0.5;
+    left: unset;
+  }
+  /* Target the roleCircle element and apply additional styles */
+  [class*="role_"] [class*="roleCircle_"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border: 1px solid transparent;
+    border-radius: 5px !important;
+    box-sizing: border-box;
+    z-index: -1 !important;
+    mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+    /*mask-composite: xor;
+      /*Border or whole bubble*/
+    opacity: var(--transparency) !important;
+  }
+  /* Unsimplfy Profile Roles */
+  [class*="userPopoutInner_"] > [class*="body_"] [class*="descriptionClamp_"] {
+    line-clamp: unset;
+    max-height: 112px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  
+    // &&::scrollbar {
+    //   width: 8px;
+    //   height: 8px;
+    // }
+    // &&::scrollbar-track {
+    //   border: 2px solid var(--scrollbar-thin-track);
+    //   background-color: var(--scrollbar-thin-track);
+    //   border-color: var(--scrollbar-thin-track);
+    // }
+    // &&::scrollbar-thumb {
+    //   background: var(--profile-body-divider-color);
+    //   background-clip: padding-box;
+    //   border: 2px solid transparent;
+    //   border-radius: 4px;
+    //   min-height: 40px;
+    // }
+  }
+  [class*="viewFullBio_"] {
+    visibility: hidden;
+  }
+  
