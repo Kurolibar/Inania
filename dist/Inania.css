@@ -1,0 +1,151 @@
+/* Remove some Icons from Channel Lists */
+[class*=iconVisibility_] [aria-label="Create Invite"],
+[class*=iconVisibility_] [aria-label="Edit Channel"],
+[class*=iconVisibility_] [aria-label="Create Channel"] {
+  display: none !important;
+}
+
+[class*=sidebar_]:not(:has([aria-label*="Direct Messages"])) [aria-label=Channels] {
+  background-image: linear-gradient(to left, transparent 0%, black 92px), var(--side-image), linear-gradient(transparent 0%, black 0%), var(--side-image);
+  background-size: 230px calc(100% - 100px), 8.3333333333vh;
+  background-repeat: no-repeat;
+  background-position: left bottom, calc(320px - 8.3333333333vh) 11rem;
+  background-attachment: local, fixed;
+  background-blend-mode: luminosity;
+}
+[class*=sidebar_]:not(:has([aria-label*="Direct Messages"])) [aria-label=Channels]:hover {
+  background-blend-mode: normal;
+}
+[class*=sidebar_]:not(:has([aria-label*="Direct Messages"])) [class*=avatar_] {
+  filter: unset;
+}
+
+div > [class*=layout_] {
+  border-radius: var(--gDM-border-radius);
+  margin: 0.3px;
+}
+
+[class^=memberInner]:has([mask*=online], [fill="#23a55a"]) {
+  background: var(--gDM-online);
+}
+
+[class^=memberInner]:has([mask*=offline], [fill="#f0b232"]) {
+  background: var(--gDM-offline);
+}
+
+[class^=memberInner]:has([mask*=dnd], [fill="#f23f43"]) {
+  background: var(--gDM-dnd);
+}
+
+[class^=memberInner]:has([mask*=idle], [fill="#f0b232"]) {
+  background: var(--gDM-idle);
+}
+
+[class^=memberInner]:has([mask*=streaming], [fill="#3f2158"]) {
+  background: var(--gDM-streaming);
+}
+
+ul > li > [class*=interactive_] {
+  border-radius: var(--gDM-border-radius);
+  margin: 0.3px;
+}
+
+[class^=link_]:has([mask*=online], [fill="#23a55a"]) {
+  background: var(--gDM-online);
+}
+
+[class^=link_]:has([mask*=offline], [fill="#80848e"]) {
+  background: var(--gDM-offline);
+}
+
+[class^=link_]:has([mask*=dnd], [fill="#f23f43"]) {
+  background: var(--gDM-dnd);
+}
+
+[class^=link_]:has([mask*=idle], [fill="#f0b232"]) {
+  background: var(--gDM-idle);
+}
+
+[class^=link_]:has([mask*=streaming], [fill="#3f2158"]) {
+  background: var(--gDM-streaming);
+}
+
+/* Floating User Panel*/
+/* [class*="sidebar_"] [class*="panels_"] [class*="container_"] {
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  background: transparent !important;
+  color: transparent !important;
+}
+.theme-dark [class*="sidebar_"] [class*="panels_"] {
+  background: transparent !important;
+  backdrop-filter: blur(1px) grayscale(50%);
+}
+.theme-dark .container_adcaac,
+[class*="activityPanel_"] {
+  background: linear-gradient(transparent, hsla(0, 0%, 0%, 0.5)) !important;
+} */
+.theme-dark [class*=sidebar_] [class*=panels_] {
+  background: transparent !important;
+  -webkit-backdrop-filter: blur(1px) grayscale(50%);
+          backdrop-filter: blur(1px) grayscale(50%);
+}
+.theme-dark [class*=sidebar_] [class*=panels_] [class*=container_] {
+  border-top-left-radius: 5px !important;
+  border-top-right-radius: 5px !important;
+  background: transparent !important;
+  color: transparent !important;
+}
+.theme-dark [class*=activityPanel_],
+.theme-dark .container_adcaac {
+  background: linear-gradient(transparent, hsla(0, 0%, 0%, 0.5)) !important;
+}
+
+/* Sidebar Image */
+/* [class*="sidebar_"]:not(:has([aria-label*="Direct Messages"])) {
+  [aria-label="Channels"] {
+    background-image: linear-gradient(to left, transparent 0%, black 35%),
+      var(--side-image), linear-gradient(transparent 0%, black 0%),
+      var(--side-image);
+    background-size: cover, 89px;
+    background-repeat: no-repeat;
+    background-position: center, 17vmin 10vmin;
+    background-attachment: local, fixed;
+    background-blend-mode: luminosity;
+  }
+
+  [aria-label="Channels"]:hover {
+    background-blend-mode: normal;
+  }
+
+  [class*="avatar_"] {
+    filter: unset;
+  }
+} */
+/* VC Hang Status */
+[class*=iconGroup]:has([class*=hangStatusIcon], [class*=gameIcon]) {
+  display: flex;
+  position: absolute;
+  right: 101%;
+}
+
+[class*=layerContainer] [class*=popout]:has([class*=text-xs-medium], [class*=options]) {
+  display: flex;
+}
+
+/* Gradient User Status */
+[class*=memberInner]:has(div > div[aria-label*=Online]) {
+  background: linear-gradient(to left, rgba(68, 105, 68, 0.25), transparent);
+}
+
+[class*=memberInner]:has(div > div[aria-label*=Idle]) {
+  background: linear-gradient(to left, rgba(135, 105, 75, 0.25), transparent);
+}
+
+[class*=memberInner]:has(div > div[aria-label*="Do Not Disturb"]) {
+  background: linear-gradient(to left, rgba(130, 70, 70, 0.25), transparent);
+}
+
+[class*=memberInner]:has(div > div[aria-label*=Streaming]) {
+  background: linear-gradient(to left, rgba(63, 33, 88, 0.25), transparent);
+}

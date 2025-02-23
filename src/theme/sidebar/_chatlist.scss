@@ -15,7 +15,7 @@
         var(--side-image);
       background-size: 230px calc(100% - 100px), calc(100vh / 12);
       background-repeat: no-repeat;
-      background-position: left bottom, calc(250px - (100vh/12)) 11rem;
+      background-position: left bottom, calc(320px - (100vh/12)) 11rem; //250px > 320px
       background-attachment: local, fixed;
       background-blend-mode: luminosity;
     }
