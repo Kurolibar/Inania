@@ -1,41 +1,47 @@
+@use 'sass:map';
+@use '../vars' as *;
+
 div > [class*="layout_"] {
-    border-radius: var(--gDM-border-radius);
+    border-radius: map.get($settings, sidebar, members, border-radius);
     margin: 0.3px;
 }
 
-[class^="memberInner"]:has([mask*="online"], [fill="#23a55a"]) {
-    background: var(--gDM-online);
-}
-[class^="memberInner"]:has([mask*="offline"], [fill="#f0b232"]) {
-    background: var(--gDM-offline);
-}
-[class^="memberInner"]:has([mask*="dnd"], [fill="#f23f43"]) {
-    background: var(--gDM-dnd);
-}
-[class^="memberInner"]:has([mask*="idle"], [fill="#f0b232"]) {
-    background: var(--gDM-idle);
-}
-[class^="memberInner"]:has([mask*="streaming"], [fill="#3f2158"]) {
-    background: var(--gDM-streaming);
+[class^="memberInner"]{
+        &:has(div > div[aria-label*="online"]) {
+        background: map.get($settings, sidebar, members, online)
+    }
+    &:has(div > div[aria-label*="offline"]) {
+        background: map.get($settings, sidebar, members, offline);
+    }
+    &:has(div > div[aria-label*="dnd"]) {
+        background: map.get($settings, sidebar, members, dnd);
+    }
+    &:has(div > div[aria-label*="idle"]) {
+        background: map.get($settings, sidebar, members, idle);
+    }:has(div > div[aria-label*="streaming"]) {
+    background: map.get($settings, sidebar, members, streaming);
+    }
 }
 
 ul > li > [class*="interactive_"] {
-    border-radius: var(--gDM-border-radius);
+    border-radius: map.get($settings, sidebar, members, border-radius);
     margin: 0.3px;
 }
 
-[class^="link_"]:has([mask*="online"], [fill="#23a55a"]) {
-    background: var(--gDM-online);
+[class^="link_"]{
+    &:has(div > div[aria-label*="online"]) {
+    background: map.get($settings, sidebar, members, online)
 }
-[class^="link_"]:has([mask*="offline"], [fill="#80848e"]) {
-    background: var(--gDM-offline);
+&:has(div > div[aria-label*="offline"]) {
+    background: map.get($settings, sidebar, members, offline);
 }
-[class^="link_"]:has([mask*="dnd"], [fill="#f23f43"]) {
-    background: var(--gDM-dnd);
+&:has(div > div[aria-label*="dnd"]) {
+    background: map.get($settings, sidebar, members, dnd);
 }
-[class^="link_"]:has([mask*="idle"], [fill="#f0b232"]) {
-    background: var(--gDM-idle);
+&:has(div > div[aria-label*="idle"]) {
+    background: map.get($settings, sidebar, members, idle);
+}:has(div > div[aria-label*="streaming"]) {
+background: map.get($settings, sidebar, members, streaming);
 }
-[class^="link_"]:has([mask*="streaming"], [fill="#3f2158"]) {
-    background: var(--gDM-streaming);
 }
+

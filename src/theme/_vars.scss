@@ -1,12 +1,14 @@
-@use "sass:map";
+@use 'sass:map';
+@use 'sass:string';
+@use 'sass:meta';
 
 $settings: (
   'app': (
-    'username': --user-name
-    'opacity': --bg-opacity
-    'wallpaper': --wallpaper
-    'accent': --accentcolorV2
-    'font-name': Consolas
+    'username': --user-name,
+    'bg-opacity': --bg-opacity,
+    'wallpaper': --wallpaper,
+    'accent': --accentcolorV2,
+    'font-name': Consolas,
     'font-size': 13px
   ),
   'chat':(
@@ -29,16 +31,18 @@ $settings: (
   'profile': (),
   'sidebar': (
     'chats':(
-        'image': --side-image
+      'image': --side-image
     ),
     'members':(
-    'online': linear-gradient(to right, --gDM-online, transparent)  
-    'offline': linear-gradient(to right, --gDM-offline, transparent)
-    'dnd':linear-gradient(to right, --gDM-dnd, transparent)
-    'idle': linear-gradient(to right, --gDM-idle, transparent)
-    'streaming':linear-gradient(to right, --gDM-streaming, transparent)
-    'border-radius': --gDM-border-radius
+      'online': linear-gradient(to right, --gDM-online, transparent),
+      'offline': linear-gradient(to right, --gDM-offline, transparent),
+      'dnd':linear-gradient(to right, --gDM-dnd, transparent),
+      'idle': linear-gradient(to right, --gDM-idle, transparent),
+      'streaming':linear-gradient(to right, --gDM-streaming, transparent),
+      'border-radius': --gDM-border-radius
     )
   ),
   'spotify': ()
   );
+
+  // @debug map.get($settings, sidebar, members, online)
